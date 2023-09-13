@@ -1,52 +1,106 @@
-# Prerequisites
-*.d
+#Lista de Exercícios
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+#Exercício 1
+valor_num = int(input("Informe um número: "))
+expo = valor_num**3
 
-# Linker output
-*.ilk
-*.map
-*.exp
+print(f"{valor_num}³ = {expo}");
 
-# Precompiled Headers
-*.gch
-*.pch
+#Exercício 2
+valor_dolar = float(input(“Digite o valor do dólar: “))
+valor_real = float(input(“Digite o valor em reais a ser convertido: “))
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+conversao = valor_real/valor_dolar
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+print("O valor digitado em reais é equivalente a: ",conversao,"em dólares");
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+#Exercício 3
+valor1 = float(input("Digite o primeiro número: "))
+valor2 = float(input("Digite o segundo número: "))
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+if valor1<valor2:
+    print("O maior número digitado foi",valor2)
+    
+elif valor1==valor2:
+    print("Números iguais");
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#Exercício 4
+lado1 = float(input("1º lado: "))
+lado2 = float(input("2º lado: "))
+lado3 = float(input("3º lado: "))
+
+if lado1==lado2==lado3:
+    print("Triângulo Equilátero")
+elif lado1==lado2 or lado1==lado3 or lado2==lado3:
+    print("Triângulo Isóceles")
+else:
+    print("Triângulo Escaleno");
+
+#Exercício 5
+num = int(input("Informe um número: "))
+for lista in range(num):
+    print(lista+1);
+
+#Exercício 6
+lista1 = [12,5.4,45,666,87,9.54]
+print("Maior valor da lista: ",max(lista1))
+print("Menor valor da lista: ",min(lista1))
+print("Média dos valores: ",sum(lista1)/len(lista1))
+print("Soma total dos valores: ",sum(lista1));
+
+#Exercício 7
+produtos = []
+
+continuar = True
+
+while continuar:
+	produto = input("Digite o nome do produto: ")
+	preço = float(input("Digite o preço do produto: "))
+	produtos.append((produto,preço))
+	resposta = input("Deseja cadastrar mais produtos? (S/N)")
+	if resposta.upper() == "N":
+		continuar = False
+
+print("Produtos cadastrados:")
+for produto, preço in produtos:
+	print(f"{produto}: R$ {preço:2f}");
+
+
+#Exercício 8
+valor_num = int(input("Informe um número: "))
+expo = valor_num**3
+
+print(f"{valor_num}³ = {expo}");
+
+#Exercício 9
+def converter_reais_para_dolares(valor_em_reais, valor_do_dolar):
+    valor_em_dolares = valor_em_reais / valor_do_dolar
+    
+    return valor_em_dolares
+
+valor_do_dolar = float(input("Digite o valor do dólar hoje: "))
+valor_em_reais = float(input("Digite o valor em reais que deseja converter: "))
+
+valor_em_dolares = converter_reais_para_dolares(valor_em_reais, valor_do_dolar)
+
+print(f"O valor de R$ {valor_em_reais:.2f} equivale a US$ {valor_em_dolares:.2f}")
+
+
+#Exercício 10
+import math
+
+A = float(input("Digite o valor de A: "))
+B = float(input("Digite o valor de B: "))
+C = float(input("Digite o valor de C: "))
+
+area_triangulo = (A * C) / 2 
+area_circulo = math.pi * (C ** 2)
+area_trapezio = ((A + B) * C) / 2 
+area_quadrado = B ** 2 
+area_retangulo = A * B 
+
+print(f"TRIANGULO: {area_triangulo:.4f}")
+print(f"CIRCULO: {area_circulo:.4f}")
+print(f"TRAPEZIO: {area_trapezio:.4f}")
+print(f"QUADRADO: {area_quadrado:.4f}")
+print(f"RETANGULO: {area_retangulo:.4f}")
